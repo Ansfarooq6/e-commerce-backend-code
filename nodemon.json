@@ -1,7 +1,7 @@
 {
     "env":{
         "MONGO_USERNAME" : "ansfarooq",
-        "MONGO_PASSWORD" : "ansfarooq",
+        "MONGO_PASSWORD" : "ansfarooq2233",
         "MONGO_DEFAULT_DATABASE" : "shopAPI"
     }
 }

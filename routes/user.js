@@ -17,6 +17,4 @@ router.get('/checkout',isAuth,userCont.checkout);
 
 router.get('/success/checkout', isAuth,userCont.checkoutsuccess);
 
-
-
 module.exports = router;

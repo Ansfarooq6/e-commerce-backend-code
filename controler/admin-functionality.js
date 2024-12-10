@@ -17,11 +17,11 @@ exports.addFood = async (req, res, next) => {
     const price = req.body.price;
     const category = req.body.category;
 
-    const imageUrl = image.path;
+    //const imageUrl = image.path;
 
     const food = new Food({
         title: title,
-        imageUrl: imageUrl,
+        imageUrl: image,
         description: description,
         price: price,
         category: category,
