@@ -19,3 +19,4 @@
 ::ffff:127.0.0.1 - - [29/Sep/2024:22:31:56 +0000] "GET /user/orderdetails HTTP/1.1" 404 156 "-" "Apache-HttpClient/4.5.14 (Java/23)"
 ::ffff:127.0.0.1 - - [29/Sep/2024:22:34:35 +0000] "GET /user/orderdetails HTTP/1.1" 404 156 "-" "Apache-HttpClient/4.5.14 (Java/23)"
 ::ffff:127.0.0.1 - - [29/Sep/2024:22:36:50 +0000] "GET /user/orderdetails HTTP/1.1" 404 156 "-" "Apache-HttpClient/4.5.14 (Java/23)"
+::1 - - [10/Dec/2024:19:16:35 +0000] "GET /user/food/list HTTP/1.1" 404 153 "-" "PostmanRuntime/7.43.0"

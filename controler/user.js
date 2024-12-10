@@ -7,19 +7,27 @@ const { validationResult } = require('express-validator');
 exports.signUp = async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        const error = new Error('Validation failed');
-        error.statusCode = 422;
-        throw error;
+        return res.status(422).json({
+            message: 'Validation failed.',
+            errors: errors.array() // Return array of validation errors
+        });
     }
+
     try {
-        const { email, password, username, address, phoneNo, } = req.body;
+        const { email, password, username, address, phoneNo } = req.body;
+
+        // Check if the user already exists
         const foundUser = await User.findOne({ email: email });
         if (foundUser) {
             return res.status(200).json({
                 message: 'User already exists'
             });
         }
+
+        // Hash the password
         const hashPassword = await bcrypt.hash(password, 12);
+
+        // Create a new user
         const user = new User({
             email: email,
             username: username,
@@ -28,20 +36,25 @@ exports.signUp = async (req, res, next) => {
             phoneNo: phoneNo,
             role: 'user' // Default role is 'user'
         });
+
+        // Save the user to the database
         await user.save();
+
+        // Send success response
         res.status(201).json({
             message: 'User registered successfully',
             userId: user._id,
-            name : user.username,
+            name: user.username
         });
-        
+
     } catch (err) {
         if (!err.statusCode) {
-            err.statusCode = 500;
+            err.statusCode = 500; // Internal Server Error
         }
         next(err);
     }
-}
+};
+
 
 exports.Login = async (req, res, next) => {
     const authHeader = req.get('Authorization')

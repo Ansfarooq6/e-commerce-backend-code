@@ -4,23 +4,23 @@ const Schema = mongoose.Schema;
 const UserModel = new Schema({
     email :{
         type : String,
-        required : true,
+        //required : true,
     },
     username :{
         type : String,
-        required : true,
+        //required : true,
     },
     password :{
         type : String,
-        required : true,
+        //required : true,
     },
     address :{
         type : String,
-        required :true,
+        //required :true,
     },
     phoneNo :{
         type : String,
-        required : true
+        //required : true
     },
     role:{
         type : String,
@@ -33,7 +33,7 @@ const UserModel = new Schema({
                 productId :{
                     type : Schema.Types.ObjectId,
                     ref : 'Product',
-                    required : true,
+                    //required : true,
                 },
                 quantity :{type : Number, required : true}
             }
