@@ -6,10 +6,11 @@ const { validationResult } = require('express-validator');
 
 exports.signUp = async (req, res, next) => {
     const errors = validationResult(req);
+    let errorsss= errors.array()
     if (!errors.isEmpty()) {
         return res.status(422).json({
             message: 'Validation failed.',
-            errors: errors.array() // Return array of validation errors
+            errors: errorsss // Return array of validation errors
         });
     }
 
