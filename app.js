@@ -98,7 +98,7 @@ app.use(morgan('combined',{stream :accessWriteStream}));
 mongoose.connect(
     MONGO_URI).then(result => {
     app.listen(process.env.PORT || 3000, () => {
-        console.log('Server is running on port');
+        console.log('Server is running on port', process.env.PORT);
     });
 }).catch(err => {
     console.error('Failed to connect to MongoDB', err);
