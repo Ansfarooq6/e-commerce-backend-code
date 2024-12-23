@@ -6,7 +6,8 @@
   "scripts": {
     "type": "module",
     "test": "mocha",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "starts":"node server.js"
   },
   "author": "Muhmmad Ans",
   "license": "ISC",
