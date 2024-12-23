@@ -12,7 +12,7 @@ const compression = require('compression');
 const morgan = require('morgan')
 const fs = require('fs');
 
-const MONGO_URI = `mongodb+srv://${process.env.MONGO_USERNAME}:ansfarooq2233@cluster0.cexffl3.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority&appName=Cluster0`
+const MONGO_URI = `mongodb+srv://ansfarooq:ansfarooq2233@cluster0.cexffl3.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority&appName=Cluster0`
 
 const app = express();
 
